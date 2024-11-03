@@ -6,19 +6,22 @@
 
 class Avion {
 public:
-    // Constructor, numele si proprietarul vor fi alocate dinamic
-    Avion(const char* nume, int capacitate_locuri, int viteza_maxima, const char* proprietar);
+    // Constructor 
+    Avion(std::string nume, int capacitate_locuri, int viteza_maxima, std::string proprietar);
     
+    // Copy constructor
+    Avion(const Avion& other);
+
     // Destructor
     ~Avion();
 
     void afiseazaInformatii() const;
 
 private:
-    char* nume; 
+    std::string nume;
     int capacitate_locuri;
     int viteza_maxima;
-    char* proprietar; 
+    std::string proprietar;
 };
 
-#endif 
+#endif // AVION_HPP

@@ -7,5 +7,10 @@ int main() {
 
     avion1.afiseazaInformatii();
 
+    // Crearea unui nou avion folosind copy constructorul
+    Avion avion2 = avion1;
+
+    avion2.afiseazaInformatii();
+
     return 0; 
 }

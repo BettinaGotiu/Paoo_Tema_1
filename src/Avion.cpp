@@ -1,29 +1,24 @@
 #include "Avion.hpp"
-#include <cstring> 
 
-// Constructor 
-Avion::Avion(const char* nume, int capacitate_locuri, int viteza_maxima, const char* proprietar)
-    : capacitate_locuri(capacitate_locuri), viteza_maxima(viteza_maxima) {
+// Constructor
+Avion::Avion(std::string nume, int capacitate_locuri, int viteza_maxima, std::string proprietar)
+    : nume(nume), capacitate_locuri(capacitate_locuri), viteza_maxima(viteza_maxima), proprietar(proprietar) {
+    std::cout << "Constructorul a fost apelat pentru avionul: " << nume << std::endl;
+}
 
-    // Alocare dinamica pentru nume
-    this->nume = new char[strlen(nume) + 1];
-    strcpy(this->nume, nume);
-
-    // Alocare dinamica pentru proprietar
-    this->proprietar = new char[strlen(proprietar) + 1];
-    strcpy(this->proprietar, proprietar);
-
-    std::cout << "Constructorul a fost apelat pentru avionul: " << this->nume << std::endl;
+// Copy constructor
+//suprascrierea copy constructor-ului asigura copierea corecta a tuturor membrilor
+Avion::Avion(const Avion& other)
+    : nume(other.nume), capacitate_locuri(other.capacitate_locuri),
+      viteza_maxima(other.viteza_maxima), proprietar(other.proprietar) {
+    std::cout << "Copy constructorul a fost apelat pentru avionul: " << nume << std::endl;
 }
 
 // Destructor
 Avion::~Avion() {
-    std::cout << "Destructorul a fost apelat pentru avionul: " << this->nume << std::endl;
-    
-    // Eliberarea memoriei in cadrul deconstructorului
-    delete[] nume;
-    delete[] proprietar;
+    std::cout << "Destructorul a fost apelat pentru avionul: " << nume << std::endl;
 }
+
 // afisare informatii
 void Avion::afiseazaInformatii() const {
     std::cout << "Avion: " << nume << ", Capacitate locuri: " << capacitate_locuri
