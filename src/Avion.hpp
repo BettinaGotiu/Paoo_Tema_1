@@ -6,19 +6,19 @@
 
 class Avion {
 public:
-    // Constructor 
-    Avion(std::string nume, int capacitate_locuri, int viteza_maxima, std::string proprietar);
-
+    // Constructor, numele si proprietarul vor fi alocate dinamic
+    Avion(const char* nume, int capacitate_locuri, int viteza_maxima, const char* proprietar);
+    
     // Destructor
     ~Avion();
 
     void afiseazaInformatii() const;
 
 private:
-    std::string nume;
+    char* nume; 
     int capacitate_locuri;
     int viteza_maxima;
-    std::string proprietar;
+    char* proprietar; 
 };
 
 #endif 
