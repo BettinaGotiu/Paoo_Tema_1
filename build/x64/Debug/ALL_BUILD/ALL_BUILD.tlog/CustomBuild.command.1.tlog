@@ -1,0 +1,10 @@
+^D:\GIT_PRJ\PAOO_1\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/git_prj/paoo_1 -BD:/git_prj/paoo_1/build --check-stamp-file D:/git_prj/paoo_1/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
