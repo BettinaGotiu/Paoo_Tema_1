@@ -12,6 +12,9 @@ public:
     // Copy constructor
     Avion(const Avion& other);
 
+    // Move constructor
+    Avion(Avion&& other) noexcept;
+
     // Destructor
     ~Avion();
 
@@ -24,4 +27,4 @@ private:
     std::string proprietar;
 };
 
-#endif // AVION_HPP
+#endif 
